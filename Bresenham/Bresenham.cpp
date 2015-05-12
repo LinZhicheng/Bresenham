@@ -3,12 +3,11 @@
 
 #include "stdafx.h"
 #include "stdlib.h"
-#include "math.h"
 #include "GL/glut.h"
 #include "GL/glaux.h"
 #include "windows.h"
 
-double w = 640, h = 480, pressX0 = 20, pressY0 = 10, pressXEnd = 480, pressYEnd = 360;
+int w = 640, h = 480, pressX0 = 20, pressY0 = 10, pressXEnd = 480, pressYEnd = 360;
 
 void setPixel(double x, double y){
 	glBegin(GL_POLYGON);
@@ -19,10 +18,10 @@ void setPixel(double x, double y){
 	glEnd();
 }
 
-void lineBres(double x0, double y0, double xEnd, double yEnd)
+void lineBres(int x0, int y0, int xEnd, int yEnd)
 {
 
-	double x, y;
+	int x, y;
 
 	if (x0 > xEnd){
 		x = xEnd;
@@ -35,7 +34,7 @@ void lineBres(double x0, double y0, double xEnd, double yEnd)
 		y = y0;
 	}
 
-	double dx = abs(xEnd - x), dy = yEnd - y, ady = abs(dy);
+	int dx = abs(xEnd - x), dy = yEnd - y, ady = abs(dy);
 	double px = 2 * ady - dx;
 	double py = 2 * dx - ady;
 	double twoDy = 2 * ady, twoDyMinesDx = 2 * (ady - dx);
