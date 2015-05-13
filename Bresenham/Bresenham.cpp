@@ -44,14 +44,14 @@ void lineBres(int x0, int y0, int xEnd, int yEnd)
 
 	if (ady < dx){
 		while (x < xEnd){
-			x++;
+			x += 10;
 			if (px < 0)
 				px += twoDy;
 			else{
 				if (dy > 0)
-					y++;
+					y += 10;
 				else
-					y--;
+					y -= 10;
 				px += twoDyMinesDx;
 			}
 			setPixel(x, y);
@@ -60,12 +60,12 @@ void lineBres(int x0, int y0, int xEnd, int yEnd)
 	else{
 		if (dy > 0){
 			while (y < yEnd){
-				y++;
+				y += 10;
 				if (py < 0){
 					py += twoDx;
 				}
 				else{
-					x++;
+					x += 10;
 					py += twoDxMinesDy;
 				}
 				setPixel(x, y);
@@ -73,12 +73,12 @@ void lineBres(int x0, int y0, int xEnd, int yEnd)
 		}
 		else{
 			while (y > yEnd){
-				y--;
+				y -= 10;
 				if (py < 0){
 					py += twoDx;
 				}
 				else{
-					x++;
+					x += 10;
 					py += twoDxMinesDy;
 				}
 				setPixel(x, y);
